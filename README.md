@@ -11,8 +11,13 @@ Este script utiliza la tecnología de inteligencia artificial `realesrgan-ncnn-v
 #### Uso:
 
 1. **Requisitos Previos**:
-- Asegúrate de tener instalado `realesrgan-ncnn-vulkan` y el modelo `realesrgan-x4plus`.
-- cwebp de Google (en Ubuntu haz: apt install cwebp)
+- En el repo se incluye `realesrgan-ncnn-vulkan` y el modelo `realesrgan-x4plus`.
+- Debes instalar cwebp de Google para convertir las imagenes a Webp.
+
+```bash
+$ apt update
+$ apt install webp
+```
 
 2. **Ejecución del Script**:
 -Ejecuta el script proporcionando la ruta de la carpeta que contiene las imágenes que deseas procesar.
