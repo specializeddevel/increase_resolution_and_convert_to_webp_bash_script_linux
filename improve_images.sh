@@ -48,11 +48,11 @@ procesar_archivos() {
             local file_name=$(basename "$file")
             echo "nombre de archivo origen: $file"
             # Definimos el archivo de salida en la carpeta de salida
-            local archivo_salida="$ruta_salida_final/${file_name%.*}_mejorado.png"
-            local archivo_salida_webp="$ruta_salida_final/${file_name%.*}_mejorado.webp"            
+            local archivo_salida="$ruta_salida_final/${file_name%.*}_mejorado.webp"
+            local archivo_salida_webp="$ruta_salida_final/${file_name%.*}_mejoradoc.webp"            
             echo "nombre de archivo de salida PNG: $archivo_salida"
             echo "nombre de archivo de salida WEBP: $archivo_salida_webp"
-            ./realesrgan-ncnn-vulkan -i "$file" -o "$archivo_salida" -n "$modelo" -g 2
+            ./realesrgan-ncnn-vulkan -i "$file" -o "$archivo_salida" -n "$modelo" -g 2 -f webp
             cwebp -q 80 "$archivo_salida" -o "$archivo_salida_webp"            
             if [ $? -eq 0 ]; then
                 echo "Procesado y borrando origen: $file_name -> $archivo_salida"
