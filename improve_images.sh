@@ -65,7 +65,7 @@ procesar_archivos() {
 }
 
 
-# Procesamos cada archivo en la raiz carpeta de entrada
+# We process each file in the entrance folder root
 cantidad_archivos=$(ls -p "$carpeta_entrada" | grep -v / | wc -l)
 echo "Amount of files in the root: $cantidad_archivos"
 if [ $cantidad_archivos -ne 0 ]; then
